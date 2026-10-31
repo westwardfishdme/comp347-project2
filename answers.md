@@ -134,7 +134,7 @@ Found in packets 5518, and 5527; Filtered on `TELNET` and followed the TCP strea
 > Linksys E2530 v3
 
 Found in the 10KiB exported object `status-data.jsx?_http_id=TIDd60f245957fb603a`
-on line 36. Labelled here as [status-data.jsx](./important/router_pages/status-data.jsx)
+on line 36. Labelled here as [status-data.jsx](./important/status-data.jsx)
 ```jsx
 nvram = {
   // ...
