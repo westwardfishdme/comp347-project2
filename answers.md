@@ -58,16 +58,13 @@ server.
 
 Filtered on `telnet` and followed the `TCP` stream.
 
-### 8. At the time of the capture, how long had the local mail server been
-   up (uptime found in TELNET)?
+### 8. At the time of the capture, how long had the local mail server been up (uptime found in TELNET)?
 ```
 16:04:17 up  1:32,  3 users,  load average: 0.00, 0.00, 0.00`
 ```
 Found in **packet 5021**.
 
-### 9. Who did the target send e-mail as and to during the interaction via
-   SMTP and what was the content of the message? (provide the from and
-   to email addresses)
+### 9. Who did the target send e-mail as and to during the interaction via SMTP and what was the content of the message? (provide the from and to email addresses)
 ```
 MAIL FROM:<steve.m.stevenson@aol.com>
 RCPT TO:<help@security-firm.co.uk>
@@ -78,9 +75,7 @@ I would like to get a quote on your identity protection package.
 
 Filtered on `SMTP` and found in **packets 4869, 4883, and 4898**.
 
-### 10. What version of the Linux kernel is the local mail server running,
-    which can be found via TELNET interactions? (it is of the format
-    "Linux 6.x.y-z-amd64")
+### 10. What version of the Linux kernel is the local mail server running, which can be found via TELNET interactions? (it is of the format "Linux 6.x.y-z-amd64")
 > Linux 6.1.0-40-amd64
 
 Found as a part of the MOTD on login; (**packet 4992**)
@@ -97,23 +92,19 @@ Found in **packets 2906, 2913** on `HTTP2`
 
 Filtered on `http2.response_in`
 
-### 12. What file was downloaded from the FTP server using the RETR command
-    by the device being watched?
+### 12. What file was downloaded from the FTP server using the RETR command by the device being watched?
 > [2024-sstevenson-1040.pdf](./important/2024-sstevenson-1040.pdf)
 
 Found on filtering for `FTP` on **packet 5743**; Item was exported and included as a part of the report.
 
-### 13. What information was provided on the via the HTTP session to the
-    local web server?
+### 13. What information was provided on the via the HTTP session to the local web server?
 > other than the credentials for login, there was a few [images](./images), there was a credential dump
 stored on the web server in the path [/vault.html](./important/vault.html) of all login details for sstevenson
 across several email accounts, and several shell logins for numerous servers. 
 
 This information was found on filtering for HTTP (to the server IP on the local network) and in **packet 5619**.
 
-### 14. What did the user change on the local mail server via TELNET using
-    the pico command (you should provide the details on what was added,
-    and to which file it was added?
+### 14. What did the user change on the local mail server via TELNET using the pico command (you should provide the details on what was added, and to which file it was added?
 > The file modified was `/etc/postfix/sasl_passwd`
 
 ```sh
@@ -127,10 +118,7 @@ The information entered was:
 ```
 Found in **packets 5518, and 5527**; Filtered on `TELNET` and followed the TCP stream.
 
-### 15. What vendor made the local router and what model is it, which can be
-    found via HTTP interactions (exporting HTTP objects and reviewing
-    the ones from the local router, in particular the status items, will
-    be helpful)?
+### 15. What vendor made the local router and what model is it, which can be found via HTTP interactions (exporting HTTP objects and reviewing the ones from the local router, in particular the status items, will be helpful)?
 > Linksys E2530 v3
 
 Found in the 10KiB exported object `status-data.jsx?_http_id=TIDd60f245957fb603a`
